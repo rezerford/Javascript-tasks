@@ -82,3 +82,40 @@ console.log(arr); // [1, 2, 3]
 ```
 
 **Это аналог array_map из PHP.**
+
+**Решение**
+
+```
+function map(func, arr){
+   
+  if(!(func instanceof Function)){
+    
+    throw "First argument is not a function";
+    return false;
+  }
+  
+  if(!(arr instanceof Array)){
+    
+    throw "First argument is not an array";
+    return false;
+  }
+  
+  var return_arr = [];
+  
+  for(var n = 0, len = arr.length; n < len; n += 1){
+    
+    var j = func(arr[n]);
+    return_arr.push(j);
+    
+    
+  }
+  
+  return return_arr;
+  
+}
+
+var func = function(x){ return x*x; };
+var arr = [1,2,3,4];
+
+console.log(map(func, arr));
+```
