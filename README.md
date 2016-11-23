@@ -16,8 +16,9 @@ console.log(generator()); // 16
 console.log(generator2()); // 8
 ```
 
-1. Решение
+**Решение**
 
+```
 function sequence(start, step){
   
   var i = i || 0;
@@ -32,16 +33,19 @@ function sequence(start, step){
     return number;
     
   }
- 
 }
+```
 
-2. Также, нужна функция take(gen, x) которая вызвает функцию gen заданное число (x) раз и возвращает массив с результатами вызовов. Она нам пригодится для отладки:
+**2.Также, нужна функция take(gen, x) которая вызвает функцию gen заданное число (x) раз и возвращает массив с результатами вызовов. Она нам пригодится для отладки:**
 
+```
 var gen2 = sequence(0, 2);
 console.log(take(gen2, 5)); // [0, 2, 4, 6, 8 ]
+```
 
-2. Решение
+**Решение**
 
+```
 function take(func, count){
  
   var arr = [];
@@ -59,3 +63,4 @@ function take(func, count){
 
 var gen2 = sequence(0, 2);
 console.log(take(gen2, 15));
+```
